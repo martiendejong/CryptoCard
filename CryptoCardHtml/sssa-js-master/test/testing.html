@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>REPL</title>
+        <script src="./all.js"></script>
+    </head>
+	<script>
+	/* Startup */
+
+	function start() {
+		alert(sssa);
+
+		var x = sssa.create(3, 5, 'Bla'); // - creates a set of shares
+
+		var bla = sssa.combine(x); // - combines shares into secret
+
+	}
+
+	window.onload = start;
+	</script>
+</html>
