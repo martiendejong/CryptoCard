@@ -1,0 +1,44 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Monero Wallet</title>
+  </head>
+  <body>
+    <h1>My Monero Wallet</h1>
+
+    <!-- Display the current balance -->
+    <p>Current balance: <span id="balance"></span> XMR</p>
+
+    <!-- Display the address -->
+    <p>Address: <span id="address"></span></p>
+
+    <!-- Form to send a transaction -->
+    <form>
+      <label for="recipient">Recipient address:</label><br>
+      <input type="text" id="recipient" name="recipient"><br>
+      <label for="amount">Amount:</label><br>
+      <input type="text" id="amount" name="amount"><br><br>
+      <button type="submit">Send</button>
+    </form> 
+
+
+    <!-- <script src="monerowallet.js"></script> -->
+
+
+    <!-- Load the Nimiq library and wallet script -->
+    <script src="nimiq/nimiq.js"></script>
+	<!-- <script src="https://stats.nimiq-network.com/nimiq.js"></script> -->
+	<!-- Load the wallet script -->
+    <!-- <script src="nimiqwallet.js"></script> -->
+	
+	<!-- Load the wallet script after the Nimiq library has finished loading -->
+    <script>
+      Nimiq.init(() => {
+        const script = document.createElement('script');
+        script.src = 'nimiqwallet.js';
+        document.head.appendChild(script);
+      });
+    </script>
+  </body>
+</html>
